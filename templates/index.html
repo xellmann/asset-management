@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}
+Asset Overview
+{% endblock title %}
+
+{% block content %}
+<body>
+<form action="/add-message" method="POST">
+    <input type="text" name="bezeichnung" placeholder="Name eingeben">
+    <input type="number" name="stueckzahl" placeholder="Stk">
+    <input type="number" name="preis" step="0.01" value="Kurs" placeholder="Kurs"/>
+    <button type="submit">Daten abfragen</button>
+</form>
+
+<h2>Buchungen:</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Bezeichnung</th>
+            <th scope="col">Stückzahl</th>
+            <th scope="col">Preis</th>
+            <th scope="col">Gesamtbetrag</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <th scope="row">{{ stock.id }}</th>
+                <td>{{ stock.bezeichnung }}</td>
+                <td>{{ stock.stueckzahl }}</td>
+                <td>{{ stock.preis }}</td>
+                <td>{{ stock.gesamtbetrag }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}
