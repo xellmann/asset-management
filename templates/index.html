@@ -4,36 +4,62 @@ Asset Overview
 {% endblock title %}
 
 {% block content %}
-<body>
-<form action="/add-message" method="POST">
-    <input type="text" name="bezeichnung" placeholder="Name eingeben">
-    <input type="number" name="stueckzahl" placeholder="Stk">
-    <input type="number" name="preis" step="0.01" value="Kurs" placeholder="Kurs"/>
-    <button type="submit">Daten abfragen</button>
-</form>
+    {% if user %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/static/img/booking_tile.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">bookings</h5>
+                <p class="card-text">Manage your bookings. Add and remove assets to your portfolio.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <section class="jumbotron">
+            <div class=container>
+                <div class="row ">
+                    <h1 class="p-3 text-center">services</h1>
+                    <div class="col-sm-10 col-lg-3 m-auto">
+                        <div class="card border-0">
+                            <div class="card-block">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="card-title">bookings</h3>
+                                </div>
+                            </div>
+                            <img src="/static/img/booking_tile.png" class="card-img-bottom img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-lg-3 m-auto">
+                        <div class="card border-0">
+                            <div class="card-block">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="card-title">analyze</h3>
+                                </div>
+                            </div>
+                            <img src="/static/img/analyze_tile.png" class="card-img-bottom img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-lg-3 m-auto">
+                        <div class="card border-0">
+                            <div class="card-block">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="card-title">statistics</h3>
+                                </div>
+                            </div>
+                            <img src="/static/img/statistics_tile.png" class="card-img-bottom img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </section>
+    {% else %}
+        <form method="post" action="/login">
+            <div>
+                <input type="text" name="user-name" placeholder="Enter your name"><br>
+                <input type="email" name="user-email" placeholder="Enter your email address"><br>
+                <input type="password" name="user-password" placeholder="Enter your password"><br>
 
-<h2>Buchungen:</h2>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Bezeichnung</th>
-            <th scope="col">Stückzahl</th>
-            <th scope="col">Preis</th>
-            <th scope="col">Gesamtbetrag</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% for stock in stocks %}
-            <tr>
-                <th scope="row">{{ stock.id }}</th>
-                <td>{{ stock.bezeichnung }}</td>
-                <td>{{ stock.stueckzahl }}</td>
-                <td>{{ stock.preis }}</td>
-                <td>{{ stock.gesamtbetrag }}</td>
-            </tr>
-            {% endfor %}
-
-        </tbody>
-    </table>
+                <button>Submit</button>
+            </div>
+        </form>
+    {% endif %}
 {% endblock %}
