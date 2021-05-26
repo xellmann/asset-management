@@ -5,47 +5,45 @@ Asset Overview
 
 {% block content %}
     {% if user %}
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/static/img/booking_tile.png" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">bookings</h5>
-                <p class="card-text">Manage your bookings. Add and remove assets to your portfolio.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
         <section class="jumbotron">
-            <div class=container>
-                <div class="row ">
-                    <h1 class="p-3 text-center">services</h1>
-                    <div class="col-sm-10 col-lg-3 m-auto">
-                        <div class="card border-0">
-                            <div class="card-block">
-                                <div class="d-flex justify-content-between">
-                                    <h3 class="card-title">bookings</h3>
+            <div class="container">
+                <div class="row">
+                    <h1 class="p-3 text-center m-5">services</h1>
+                    <div class="col-sm-10 col-lg-1 m-auto">
+                        <a href="/bookings" class="text-decoration-none text-reset">
+                            <div class="card border-0">
+                                <img src="/static/img/booking_tile.png" class="card-img-top img-fluid">
+                                <div class="card-block">
+                                    <div class="d-flex justify-content-center">
+                                        <h3 class="card-title">bookings</h3></br>
+                                    </div>
                                 </div>
                             </div>
-                            <img src="/static/img/booking_tile.png" class="card-img-bottom img-fluid">
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-sm-10 col-lg-3 m-auto">
-                        <div class="card border-0">
-                            <div class="card-block">
-                                <div class="d-flex justify-content-between">
-                                    <h3 class="card-title">analyze</h3>
+                    <div class="col-sm-10 col-lg-1 m-auto">
+                        <a href="/analyze" class="text-decoration-none text-reset">
+                            <div class="card border-0">
+                                <img src="/static/img/analyze_tile.png" class="card-img-top img-fluid">
+                                <div class="card-block">
+                                    <div class="d-flex justify-content-center">
+                                        <h3 class="card-title">analyze</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <img src="/static/img/analyze_tile.png" class="card-img-bottom img-fluid">
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-sm-10 col-lg-3 m-auto">
-                        <div class="card border-0">
-                            <div class="card-block">
-                                <div class="d-flex justify-content-between">
-                                    <h3 class="card-title">statistics</h3>
+                    <div class="col-sm-10 col-lg-1 m-auto">
+                        <a href="/statistics" class="text-decoration-none text-reset">
+                            <div class="card border-0">
+                                <img src="/static/img/statistics_tile.png" class="card-img-top img-fluid">
+                                <div class="card-block">
+                                    <div class="d-flex justify-content-center">
+                                        <h3 class="card-title">statistics</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <img src="/static/img/statistics_tile.png" class="card-img-bottom img-fluid">
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -68,5 +68,15 @@ def add_message():
     return redirect("/bookings")
 
 
+@app.route("/statistics")
+def statistics():
+    return render_template("statistics.html")
+
+
+@app.route("/analyze")
+def analyze():
+    return render_template("analyze.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
